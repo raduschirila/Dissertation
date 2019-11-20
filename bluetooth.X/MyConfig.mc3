@@ -323,7 +323,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISD"/>
-         <value>187</value>
+         <value>179</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISE"/>
@@ -2071,7 +2071,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISD" settingAlias="TRISD3"/>
-         <value>input</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="LATD" settingAlias="LATD4" alias="clear"/>
@@ -2223,7 +2223,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RD3"/>
-         <value/>
+         <value>IO_RD3</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="Pin Module" registerAlias="LATB" settingAlias="LATB6" alias="clear"/>
@@ -3995,7 +3995,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="RD3"/>
-         <value>disabled</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="System Module" registerAlias="CONFIG1H" settingAlias="FOSC" alias="INTIO67"/>
@@ -4268,48 +4268,48 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>mcc_generated_files\eusart2.c</file>
-         <hash>80b4603f4b78709eaf01c16fc7b42e71537254df3e5c85ce28c241ee4f31f073</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>56ae237476befba5c0ec5ee3592d98501ee8958879bf82150dcfb18bc2fa22cd</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\device_config.h</file>
+         <file>mcc_generated_files/device_config.h</file>
          <hash>b78b72177ec5d10d4c62c8c626e733da78f6811b9e7f3f78ee5895ac15870aa3</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\eusart1.h</file>
-         <hash>b21d38855353416b50294df85b26d215c35f2115eefc4508215a449fc741018e</hash>
+         <file>mcc_generated_files/pin_manager.h</file>
+         <hash>928a80cc22587bca093effb578fc91395194485eb2f593cf6f351b0448d3778f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\eusart2.h</file>
+         <file>mcc_generated_files/eusart2.h</file>
          <hash>6310d61a8ebc62350a2738ccc057748198bb9557a6ab4740a40fbbbc1e3429d3</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/eusart1.h</file>
+         <hash>b21d38855353416b50294df85b26d215c35f2115eefc4508215a449fc741018e</hash>
       </entry>
       <entry>
          <file>main.c</file>
          <hash>511da2cda444552f532c075402e1b8c3ad59909b3f91c75983de362231765ba9</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\device_config.c</file>
-         <hash>c781df5cc57cecb5c6cbb667de8369ea1d855da2034cf89ac00afaafe75ac1a3</hash>
+         <file>mcc_generated_files/eusart2.c</file>
+         <hash>80b4603f4b78709eaf01c16fc7b42e71537254df3e5c85ce28c241ee4f31f073</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pin_manager.h</file>
-         <hash>6e83308ea8d982978282e37855590b1caf9e86825cd45d4d3c5f9b7c34c7ff17</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\mcc.c</file>
-         <hash>70bb8e088b605b657974595c0d17d99d24d7c7198925e5e6431339c3a8c9f2cf</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\eusart1.c</file>
+         <file>mcc_generated_files/eusart1.c</file>
          <hash>08f026a31678aae67fffcd73b7da9ac2ad2118ab997b76700cf04f24f1b8a2e4</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pin_manager.c</file>
-         <hash>f6e82988ef855136a2ef58b5baf5e5872dc89f2517828cef6b9d357c620699a0</hash>
+         <file>mcc_generated_files/mcc.h</file>
+         <hash>56ae237476befba5c0ec5ee3592d98501ee8958879bf82150dcfb18bc2fa22cd</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/device_config.c</file>
+         <hash>c781df5cc57cecb5c6cbb667de8369ea1d855da2034cf89ac00afaafe75ac1a3</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/mcc.c</file>
+         <hash>70bb8e088b605b657974595c0d17d99d24d7c7198925e5e6431339c3a8c9f2cf</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/pin_manager.c</file>
+         <hash>caedfa2fbfe1cb00eac0006860271b7996319a6baa757510664d8c061eb450a4</hash>
       </entry>
    </generatedFileHashHistoryMap>
    <mc3libFileHashHistoryMap class="java.util.HashMap"/>

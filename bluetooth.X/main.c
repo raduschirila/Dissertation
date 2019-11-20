@@ -5,9 +5,19 @@
 void init()
 {
     TRISDbits.RD2 = 0;
+    TRISDbits.RD3 = 0;
 }
 
-
+inline void pwm(int duty_percent)
+{
+    for(int j=0;j<5;++j){
+    //out of one second period
+    LATDbits.LATD3 = 0;
+    __delay_ms(1000-duty_percent * 10);
+    LATDbits.LATD3 = 1;
+    __delay_ms(duty_percent * 10);
+    }
+}
 void toggle()
 {
     LATDbits.LATD2 = 0;
@@ -29,25 +39,9 @@ void main(void)
     }
     while (1)
     {
-        //polling receive
-        recv = EUSART2_Read();
-        decoded = (char)recv;
-        char msg[20] = "Hello, Human.";
-        if(decoded == 'i' || decoded == '0')
+        for(register int i=0;i<=100;i+=10)
         {
-            toggle();
-            EUSART2_Write((uint8_t)40);
-            for (register int i=0;i<strlen(msg);++i)
-            {
-                EUSART1_Write(msg[i]);
-            }
-            toggle();
-            __delay_ms(10);
+            pwm(i);
         }
-        
-        
     }
 }
-/**
- End of File
-*/
