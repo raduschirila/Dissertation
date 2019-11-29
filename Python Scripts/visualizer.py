@@ -1,29 +1,33 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Nov 12 18:51:01 2019
-
-@author: radus
-"""
-
-import serial 
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
-import time
-
-def visual(img,row,col):
-    cv2.circle(img,(row, col), 20, (2,255,0), -1)
-    cv2.imshow("da",img);
-    time.sleep(1);
+import threading
+import sys
+option = -1
 
 
-in1 = [1,2,3,4,5];
-img = cv2.imread("hand.png",0);
-run = True;
-print(img.shape)
-cv2.imshow("init",img);
+def get():
+    while 1:
+        option = int(input("option: "))
+        if option == 22:
+            sys.exit();
+        else:
+            visualizer(option)
 
-visual(img,310,100)
+def visualizer(option):
+    positions = [(190, 330), (310, 100), (440, 60), (550, 85),(630, 185)]
+    img = cv2.imread("hand.png",1) #read greyscale image
+    cv2.imshow("s", img)
+    cv2.waitKey(1)
+    copy = cv2.imread("hand.png",1)
+    cv2.circle(copy,(positions[option][0],positions[option][1]),20,(255,0,0),thickness = -1);
+    cv2.imshow("s", copy);
+    cv2.waitKey(1)
 
-cv2.waitKey(0);
-cv2.destroyAllWindows();
+
+
+
+if __name__ == "__main__":
+    get()
+
+
+

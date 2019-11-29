@@ -9885,25 +9885,14 @@ void *memccpy (void *restrict, const void *restrict, int, size_t);
 void init()
 {
     TRISDbits.RD2 = 0;
-    TRISDbits.RD3 = 0;
 }
 
-__attribute__((inline)) void pwm(int duty_percent)
-{
-    for(int j=0;j<5;++j){
-
-    LATDbits.LATD3 = 0;
-    _delay((unsigned long)((1000-duty_percent * 10)*(1000000/4000.0)));
-    LATDbits.LATD3 = 1;
-    _delay((unsigned long)((duty_percent * 10)*(1000000/4000.0)));
-    }
-}
-void toggle()
+void toggle(int delay)
 {
     LATDbits.LATD2 = 0;
-    _delay((unsigned long)((200)*(1000000/4000.0)));
+    _delay((unsigned long)((delay)*(1000000/4000.0)));
     LATDbits.LATD2 = 1;
-    _delay((unsigned long)((200)*(1000000/4000.0)));
+    _delay((unsigned long)((delay)*(1000000/4000.0)));
 }
 void main(void)
 {
@@ -9912,16 +9901,18 @@ void main(void)
     uint8_t data = 0;
     init();
     char decoded;
-    uint8_t recv;
+    uint8_t delay = 100;
     for(int i=0;i<=3;++i)
     {
         toggle();
     }
     while (1)
     {
-        for(register int i=0;i<=100;i+=10)
-        {
-            pwm(i);
-        }
+        data = EUSART2_Read();
+        if(data == (uint8_t) 'w')
+            toggle(delay-1);
+        else if (data == (uint8_t) 's')
+            toggle(delay+1);
+        else toggle(delay);
     }
 }
