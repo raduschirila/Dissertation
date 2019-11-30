@@ -2,16 +2,28 @@ import cv2
 import numpy as np
 import threading
 import sys
-option = -1
+import serial
+import time
+pic = serial.Serial('/dev/tty.usbmodem141201')  # open serial port
+pic.baudrate=9600;
+option = -1;
 
 
 def get():
     while 1:
-        option = int(input("option: "))
-        if option == 22:
-            sys.exit();
-        else:
-            visualizer(option)
+        data = pic.read(pic.in_waiting);
+        if data:
+            processed = str(data.decode('utf-8'))  # str(data).replace('\\r\\n','').encode('utf-8').decode('utf-8')
+            print(str(data));
+            processed2 = str(processed)
+            processed2 = processed.replace('\\r\\n', '').replace("Received data: ", '');
+            print(processed2)
+
+            processed3 = int(processed2)
+            if processed3 == 22:
+                sys.exit();
+            else:
+                visualizer(processed3);
 
 def visualizer(option):
     positions = [(190, 330), (310, 100), (440, 60), (550, 85),(630, 185)]
@@ -26,8 +38,10 @@ def visualizer(option):
 
 
 
+
 if __name__ == "__main__":
     get()
+
 
 
 
