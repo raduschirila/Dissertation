@@ -5,16 +5,13 @@
 ///////////////////////////////////////////////////
 
 #define p 11
-#define led 7 // onboard led?
-int data;
+#define led 7 // onboard led
+uint8_t data;
 void setup() 
 {
   pinMode(p, OUTPUT);
   pinMode(led, OUTPUT);
   Serial1.begin(38400); 
-  Serial1.write("AT+MODE=1\n");
-  Serial1.write("AT+CMODE = 0\n");
-  Serial1.write("AT+BIND = 0014,03,0600fe\n");
   Serial.begin(9600);
 }
 
@@ -28,7 +25,8 @@ void loop()
     digitalWrite(led, HIGH);
   }
   Serial1.write(data);
-  Serial.println("Transfer registered!");
+  Serial.print("Received: ");
+  Serial.println(data);
   delay(10);
 }
   
