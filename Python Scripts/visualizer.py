@@ -4,7 +4,7 @@ import threading
 import sys
 import serial
 import time
-pic = serial.Serial('/dev/tty.usbmodem141201')  # open serial port
+pic = serial.Serial('/dev/tty.usbmodem141101')  # open serial port
 pic.baudrate=9600;
 option = -1;
 

@@ -12,6 +12,9 @@ void setup()
   pinMode(p, OUTPUT);
   pinMode(led, OUTPUT);
   Serial1.begin(38400); 
+  Serial1.write("AT+MODE=1\n");
+  Serial1.write("AT+CMODE = 0\n");
+  Serial1.write("AT+BIND = 0014,03,0600fe\n");
   Serial.begin(9600);
 }
 
