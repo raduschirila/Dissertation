@@ -4,19 +4,19 @@ import threading
 import sys
 import serial
 import time
-pic = serial.Serial('/dev/tty.usbmodem141101')  # open serial port
-pic.baudrate=9600;
+recv = serial.Serial('COM5')  # open serial port
+recv.baudrate=9600;
 option = -1;
 
 
 def get():
     while 1:
-        data = pic.read(pic.in_waiting);
+        data = recv.read(recv.in_waiting);
         if data:
             processed = str(data.decode('utf-8'))  # str(data).replace('\\r\\n','').encode('utf-8').decode('utf-8')
             print(str(data));
             processed2 = str(processed)
-            processed2 = processed.replace('\\r\\n', '').replace("Received data: ", '');
+            processed2 = processed.replace('\\r\\n', '').replace("Received: ", '');
             print(processed2)
 
             processed3 = int(processed2)
