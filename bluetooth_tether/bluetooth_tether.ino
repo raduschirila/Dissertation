@@ -8,7 +8,7 @@ void setup()
 void loop()
 { 
   byte r;
-  if(Serial1.available()>3)
+  if(Serial1.available()>0)
   {
     Serial.println((int)Serial1.read());
   }
