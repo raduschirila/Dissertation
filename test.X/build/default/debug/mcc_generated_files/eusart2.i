@@ -9813,7 +9813,7 @@ void EUSART2_Initialize(void)
     TXSTA2 = 0x24;
 
 
-    SPBRG2 = 0x06;
+    SPBRG2 = 0x0C;
 
 
     SPBRGH2 = 0x00;

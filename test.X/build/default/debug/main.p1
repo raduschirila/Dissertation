@@ -1,47 +1,17 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"29 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\string.h: 29: void *memset (void *, int, size_t);
+[v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
+"342 ./mcc_generated_files/eusart2.h
+[; ;./mcc_generated_files/eusart2.h: 342: void EUSART2_Write(uint8_t txData);
+[v _EUSART2_Write `(v ~T0 @X0 0 ef1`uc ]
+"254
+[; ;./mcc_generated_files/eusart2.h: 254: _Bool EUSART2_is_tx_done(void);
+[v _EUSART2_is_tx_done `(a ~T0 @X0 0 ef ]
 [p mainexit ]
 "69 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"111 ./mcc_generated_files/eusart2.h
-[; ;./mcc_generated_files/eusart2.h: 111: void EUSART2_Initialize(void);
-[v _EUSART2_Initialize `(v ~T0 @X0 0 ef ]
-"8737 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 8737:     struct {
-[s S413 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S413 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
-"8747
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 8747:     struct {
-[s S414 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S414 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"8736
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 8736: typedef union {
-[u S412 `S413 1 `S414 1 ]
-[n S412 . . . ]
-"8758
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 8758: extern volatile TRISDbits_t TRISDbits __attribute__((address(0xF95)));
-[v _TRISDbits `VS412 ~T0 @X0 0 e@3989 ]
-"342 ./mcc_generated_files/eusart2.h
-[; ;./mcc_generated_files/eusart2.h: 342: void EUSART2_Write(uint8_t txData);
-[v _EUSART2_Write `(v ~T0 @X0 0 ef1`uc ]
-"7902 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 7902:     struct {
-[s S389 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S389 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"7912
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 7912:     struct {
-[s S390 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S390 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"7901
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 7901: typedef union {
-[u S388 `S389 1 `S390 1 ]
-[n S388 . . . ]
-"7923
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 7923: extern volatile LATDbits_t LATDbits __attribute__((address(0xF8C)));
-[v _LATDbits `VS388 ~T0 @X0 0 e@3980 ]
-"254 ./mcc_generated_files/eusart2.h
-[; ;./mcc_generated_files/eusart2.h: 254: _Bool EUSART2_is_tx_done(void);
-[v _EUSART2_is_tx_done `(a ~T0 @X0 0 ef ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -798,73 +768,193 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17372
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f45k22.h: 17372: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
 "3 main.c
-[; ;main.c: 3: void main(void)
+[; ;main.c: 3: uint8_t data[5];
+[v _data `uc ~T0 @X0 -> 5 `i e ]
+[v F6501 `(v ~T0 @X0 1 tf1`i ]
+"5
+[; ;main.c: 5: __attribute__((inline)) void fill(int x)
+[v _fill `TF6501 ~T0 @X0 1 e ]
+"6
+[; ;main.c: 6: {
+{
+[e :U _fill ]
+"5
+[; ;main.c: 5: __attribute__((inline)) void fill(int x)
+[v _x `i ~T0 @X0 1 r1 ]
+"6
+[; ;main.c: 6: {
+[f ]
+"7
+[; ;main.c: 7:     memset(data, 1, sizeof(data));
+[e ( _memset (3 , , -> &U _data `*v -> 1 `i -> # _data `ui ]
+"8
+[; ;main.c: 8:     for (int i=0;i<x;++i)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $U 860  ]
+[e :U 857 ]
+"9
+[; ;main.c: 9:     {
+{
+"10
+[; ;main.c: 10:         data[i]=2;
+[e = *U + &U _data * -> -> _i `ui `ux -> -> # *U &U _data `ui `ux -> -> 2 `i `uc ]
+"11
+[; ;main.c: 11:     }
+}
+[e =+ _i -> 1 `i ]
+[e :U 860 ]
+[e $ < _i _x 857  ]
+[e :U 858 ]
+}
+"12
+[; ;main.c: 12: }
+[e :UE 856 ]
+}
+[v F6505 `(v ~T0 @X0 1 tf ]
+"14
+[; ;main.c: 14: __attribute__((inline)) void send_pad()
+[v _send_pad `TF6505 ~T0 @X0 1 e ]
+"15
+[; ;main.c: 15: {
+{
+[e :U _send_pad ]
+[f ]
+"16
+[; ;main.c: 16:     for(int i=0;i<5;++i)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 862  ]
+[e $U 863  ]
+[e :U 862 ]
+"17
+[; ;main.c: 17:     {
+{
+"18
+[; ;main.c: 18:         EUSART2_Write((uint8_t)0);
+[e ( _EUSART2_Write (1 -> -> 0 `i `uc ]
+"19
+[; ;main.c: 19:     }
+}
+[e =+ _i -> 1 `i ]
+[e $ < _i -> 5 `i 862  ]
+[e :U 863 ]
+}
+"20
+[; ;main.c: 20:     while(!EUSART2_is_tx_done());
+[e $U 865  ]
+[e :U 866 ]
+[e :U 865 ]
+[e $ ! != -> ( _EUSART2_is_tx_done ..  `i -> 0 `i 866  ]
+[e :U 867 ]
+"21
+[; ;main.c: 21: }
+[e :UE 861 ]
+}
+[v F6508 `(v ~T0 @X0 1 tf ]
+"23
+[; ;main.c: 23: __attribute__((inline)) void send_buf()
+[v _send_buf `TF6508 ~T0 @X0 1 e ]
+"24
+[; ;main.c: 24: {
+{
+[e :U _send_buf ]
+[f ]
+"25
+[; ;main.c: 25:     for(int i=0;i<5;++i)
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 5 `i 869  ]
+[e $U 870  ]
+[e :U 869 ]
+"26
+[; ;main.c: 26:     {
+{
+"27
+[; ;main.c: 27:         EUSART2_Write(data[i]);
+[e ( _EUSART2_Write (1 *U + &U _data * -> -> _i `ui `ux -> -> # *U &U _data `ui `ux ]
+"28
+[; ;main.c: 28:     }
+}
+[e =+ _i -> 1 `i ]
+[e $ < _i -> 5 `i 869  ]
+[e :U 870 ]
+}
+"29
+[; ;main.c: 29:     while(!EUSART2_is_tx_done());
+[e $U 872  ]
+[e :U 873 ]
+[e :U 872 ]
+[e $ ! != -> ( _EUSART2_is_tx_done ..  `i -> 0 `i 873  ]
+[e :U 874 ]
+"30
+[; ;main.c: 30: }
+[e :UE 868 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"32
+[; ;main.c: 32: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"4
-[; ;main.c: 4: {
+"33
+[; ;main.c: 33: {
 {
 [e :U _main ]
 [f ]
-"5
-[; ;main.c: 5:     SYSTEM_Initialize();
+"34
+[; ;main.c: 34:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"6
-[; ;main.c: 6:     EUSART2_Initialize();
-[e ( _EUSART2_Initialize ..  ]
-"7
-[; ;main.c: 7:     TRISDbits.RD2=0;
-[e = . . _TRISDbits 1 2 -> -> 0 `i `uc ]
-"8
-[; ;main.c: 8:     uint8_t data=0x00;
-[v _data `uc ~T0 @X0 1 a ]
-[e = _data -> -> 0 `i `uc ]
-"9
-[; ;main.c: 9:     while (1)
-[e :U 857 ]
-"10
-[; ;main.c: 10:     {
+"35
+[; ;main.c: 35:     uint8_t index = 0;
+[v _index `uc ~T0 @X0 1 a ]
+[e = _index -> -> 0 `i `uc ]
+"36
+[; ;main.c: 36:     while (1)
+[e :U 877 ]
+"37
+[; ;main.c: 37:     {
 {
-"11
-[; ;main.c: 11:         EUSART2_Write(data);
-[e ( _EUSART2_Write (1 _data ]
-"12
-[; ;main.c: 12:         LATDbits.LATD2 = 1;
-[e = . . _LATDbits 0 2 -> -> 1 `i `uc ]
-"13
-[; ;main.c: 13:         while(EUSART2_is_tx_done()){}
-[e $U 859  ]
-[e :U 860 ]
-{
+"38
+[; ;main.c: 38:         send_pad();
+[e ( _send_pad ..  ]
+"39
+[; ;main.c: 39:         fill(index);
+[e ( _fill (1 -> _index `i ]
+"40
+[; ;main.c: 40:         send_buf();
+[e ( _send_buf ..  ]
+"41
+[; ;main.c: 41:         send_pad();
+[e ( _send_pad ..  ]
+"42
+[; ;main.c: 42:         while(!EUSART2_is_tx_done());
+[e $U 879  ]
+[e :U 880 ]
+[e :U 879 ]
+[e $ ! != -> ( _EUSART2_is_tx_done ..  `i -> 0 `i 880  ]
+[e :U 881 ]
+"43
+[; ;main.c: 43:         if(index == 5)
+[e $ ! == -> _index `i -> 5 `i 882  ]
+"44
+[; ;main.c: 44:             index = 0;
+[e = _index -> -> 0 `i `uc ]
+[e $U 883  ]
+"45
+[; ;main.c: 45:         else index++;
+[e :U 882 ]
+[e ++ _index -> -> 1 `i `uc ]
+[e :U 883 ]
+"46
+[; ;main.c: 46:     }
 }
-[e :U 859 ]
-[e $ != -> ( _EUSART2_is_tx_done ..  `i -> 0 `i 860  ]
-[e :U 861 ]
-"15
-[; ;main.c: 15:         if(data<0xFC)
-[e $ ! < -> _data `i -> 252 `i 862  ]
-"16
-[; ;main.c: 16:             data+=0x1;
-[e =+ _data -> -> 1 `i `uc ]
-[e $U 863  ]
-"17
-[; ;main.c: 17:         else
-[e :U 862 ]
-"18
-[; ;main.c: 18:             data = 0;
-[e = _data -> -> 0 `i `uc ]
-[e :U 863 ]
-"20
-[; ;main.c: 20:         LATDbits.LATD2 = 0;
-[e = . . _LATDbits 0 2 -> -> 0 `i `uc ]
-"21
-[; ;main.c: 21:     }
-}
-[e :U 856 ]
-[e $U 857  ]
-[e :U 858 ]
-"22
-[; ;main.c: 22: }
-[e :UE 855 ]
+[e :U 876 ]
+[e $U 877  ]
+[e :U 878 ]
+"47
+[; ;main.c: 47: }
+[e :UE 875 ]
 }

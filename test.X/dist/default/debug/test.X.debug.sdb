@@ -15,6 +15,8 @@
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -27,7 +29,13 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"3 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\main.c
+"5 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\main.c
+[v _fill fill `T(v  1 e 1 0 ]
+"14
+[v _send_pad send_pad `T(v  1 e 1 0 ]
+"23
+[v _send_buf send_buf `T(v  1 e 1 0 ]
+"32
 [v _main main `(v  1 e 1 0 ]
 "66 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\mcc_generated_files/eusart2.c
 [v _EUSART2_Initialize EUSART2_Initialize `(v  1 e 1 0 ]
@@ -145,27 +153,6 @@
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
 "7896
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S455 . 1 `uc 1 LATD0 1 0 :1:0 
-`uc 1 LATD1 1 0 :1:1 
-`uc 1 LATD2 1 0 :1:2 
-`uc 1 LATD3 1 0 :1:3 
-`uc 1 LATD4 1 0 :1:4 
-`uc 1 LATD5 1 0 :1:5 
-`uc 1 LATD6 1 0 :1:6 
-`uc 1 LATD7 1 0 :1:7 
-]
-"7923
-[s S464 . 1 `uc 1 LD0 1 0 :1:0 
-`uc 1 LD1 1 0 :1:1 
-`uc 1 LD2 1 0 :1:2 
-`uc 1 LD3 1 0 :1:3 
-`uc 1 LD4 1 0 :1:4 
-`uc 1 LD5 1 0 :1:5 
-`uc 1 LD6 1 0 :1:6 
-`uc 1 LD7 1 0 :1:7 
-]
-[u S473 . 1 `S455 1 . 1 0 `S464 1 . 1 0 ]
-[v _LATDbits LATDbits `VES473  1 e 1 @3980 ]
 "8008
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
 "8060
@@ -176,27 +163,6 @@
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
 "8726
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
-[s S414 . 1 `uc 1 TRISD0 1 0 :1:0 
-`uc 1 TRISD1 1 0 :1:1 
-`uc 1 TRISD2 1 0 :1:2 
-`uc 1 TRISD3 1 0 :1:3 
-`uc 1 TRISD4 1 0 :1:4 
-`uc 1 TRISD5 1 0 :1:5 
-`uc 1 TRISD6 1 0 :1:6 
-`uc 1 TRISD7 1 0 :1:7 
-]
-"8758
-[s S423 . 1 `uc 1 RD0 1 0 :1:0 
-`uc 1 RD1 1 0 :1:1 
-`uc 1 RD2 1 0 :1:2 
-`uc 1 RD3 1 0 :1:3 
-`uc 1 RD4 1 0 :1:4 
-`uc 1 RD5 1 0 :1:5 
-`uc 1 RD6 1 0 :1:6 
-`uc 1 RD7 1 0 :1:7 
-]
-[u S432 . 1 `S414 1 . 1 0 `S423 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES432  1 e 1 @3989 ]
 "8948
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "9064
@@ -265,6 +231,8 @@
 ]
 [u S367 . 1 `S345 1 . 1 0 `S354 1 . 1 0 `S363 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES367  1 e 1 @4082 ]
+"3 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\main.c
+[v _data data `[5]uc  1 e 5 0 ]
 [s S24 . 1 `uc 1 perr 1 0 :1:0 
 `uc 1 ferr 1 0 :1:1 
 `uc 1 oerr 1 0 :1:2 
@@ -279,12 +247,61 @@
 [v _EUSART2_OverrunErrorHandler EUSART2_OverrunErrorHandler `*.37(v  1 e 2 0 ]
 "60
 [v _EUSART2_ErrorHandler EUSART2_ErrorHandler `*.37(v  1 e 2 0 ]
-"3 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\main.c
+"32 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
+"35
+[v main@index index `uc  1 a 1 17 ]
+"47
+} 0
+"14
+[v _send_pad send_pad `T(v  1 e 1 0 ]
+{
+"16
+[v send_pad@i i `i  1 a 2 1 ]
+"21
+} 0
+"23
+[v _send_buf send_buf `T(v  1 e 1 0 ]
+{
+"25
+[v send_buf@i i `i  1 a 2 1 ]
+"30
+} 0
+"104 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\mcc_generated_files/eusart2.c
+[v _EUSART2_is_tx_done EUSART2_is_tx_done `(a  1 e 1 0 ]
+{
+"107
+} 0
+"132
+[v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
+{
+[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART2_Write@txData txData `uc  1 a 1 0 ]
+"139
+} 0
+"5 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\main.c
+[v _fill fill `T(v  1 e 1 0 ]
+{
 "8
-[v main@data data `uc  1 a 1 2 ]
-"22
+[v fill@i i `i  1 a 2 15 ]
+"5
+[v fill@x x `i  1 p 2 12 ]
+"12
+} 0
+"4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\memset.c
+[v _memset memset `(*.39v  1 e 2 0 ]
+{
+"6
+[v memset@s s `*.39uc  1 a 2 10 ]
+"7
+[v memset@k k `ui  1 a 2 8 ]
+"4
+[v memset@dest dest `*.39v  1 p 2 0 ]
+[v memset@c c `i  1 p 2 2 ]
+[v memset@n n `ui  1 p 2 4 ]
+"90
 } 0
 "50 C:\Users\Radu Chirila\Documents\Repo\Dissertation\test.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -323,17 +340,4 @@
 {
 [v EUSART2_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
 "176
-} 0
-"104
-[v _EUSART2_is_tx_done EUSART2_is_tx_done `(a  1 e 1 0 ]
-{
-"107
-} 0
-"132
-[v _EUSART2_Write EUSART2_Write `(v  1 e 1 0 ]
-{
-[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART2_Write@txData txData `uc  1 a 1 wreg ]
-[v EUSART2_Write@txData txData `uc  1 a 1 0 ]
-"139
 } 0

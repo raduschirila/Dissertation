@@ -9800,24 +9800,105 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 1 "main.c" 2
 
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 2 3
+
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 2 "main.c" 2
+
+uint8_t data[5];
+
+__attribute__((inline)) void fill(int x)
+{
+    memset(data, 1, sizeof(data));
+    for (int i=0;i<x;++i)
+    {
+        data[i]=2;
+    }
+}
+
+__attribute__((inline)) void send_pad()
+{
+    for(int i=0;i<5;++i)
+    {
+        EUSART2_Write((uint8_t)0);
+    }
+    while(!EUSART2_is_tx_done());
+}
+
+__attribute__((inline)) void send_buf()
+{
+    for(int i=0;i<5;++i)
+    {
+        EUSART2_Write(data[i]);
+    }
+    while(!EUSART2_is_tx_done());
+}
 
 void main(void)
 {
     SYSTEM_Initialize();
-    EUSART2_Initialize();
-    TRISDbits.RD2=0;
-    uint8_t data=0x00;
+    uint8_t index = 0;
     while (1)
     {
-        EUSART2_Write(data);
-        LATDbits.LATD2 = 1;
-        while(EUSART2_is_tx_done()){}
-
-        if(data<0xFC)
-            data+=0x1;
-        else
-            data = 0;
-
-        LATDbits.LATD2 = 0;
+        send_pad();
+        fill(index);
+        send_buf();
+        send_pad();
+        while(!EUSART2_is_tx_done());
+        if(index == 5)
+            index = 0;
+        else index++;
     }
 }

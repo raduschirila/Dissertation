@@ -880,8 +880,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 73:     TRISD = 0xBB;
 [e = _TRISD -> -> 187 `i `uc ]
 "78
-[; ;mcc_generated_files/pin_manager.c: 78:     ANSELD = 0x3F;
-[e = _ANSELD -> -> 63 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 78:     ANSELD = 0x3B;
+[e = _ANSELD -> -> 59 `i `uc ]
 "79
 [; ;mcc_generated_files/pin_manager.c: 79:     ANSELC = 0xFC;
 [e = _ANSELC -> -> 252 `i `uc ]
