@@ -4,7 +4,7 @@ import threading
 import sys
 import serial
 import time
-s = serial.Serial("COM9");
+s = serial.Serial("COM5");
 s.baudrate = 9600;
 
 
