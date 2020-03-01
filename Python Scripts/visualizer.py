@@ -4,7 +4,7 @@ import threading
 import sys
 import serial
 import time
-s = serial.Serial("COM5");
+s = serial.Serial("COM7");
 s.baudrate = 9600;
 
 
@@ -20,6 +20,7 @@ def get():
             x = int(value);
             if index == 13:
                 index = 0;
+                print(buf)
                 visualizer(buf);
                 buf = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             if x == 0:  # we are in the padding region
