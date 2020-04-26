@@ -27,7 +27,7 @@ inline void error(int code)
     for(int i = 0; i< code; ++i)
     {
         LATDbits.LATD5 = !LATDbits.LATD5;
-        __delay_ms(300);
+        __delay_ms(100);
     }
     LATDbits.LATD5 = 1;
 }
@@ -158,28 +158,26 @@ inline void actuate()
     }
 }
 
+inline void send_pad()
+{
+    for (int i =0;i<5;++i)
+    {
+        EUSART2_Write(0);
+    }
+}
+
 inline void timedReading_ISR(void)
 {
-//    memset(read, 0, sizeof(read));
-//    int a,b,c,d,e;
-//    a=(ADC_GetConversion(channel_AN0));
-//    b=(ADC_GetConversion(channel_AN1));
-//    c=(ADC_GetConversion(channel_AN2));
-//    d=(ADC_GetConversion(channel_AN3));
-//    e=(ADC_GetConversion(channel_AN4));
-//    read[0] = 'B';
-//    read[1] = map(a,0,4096,0,255);
-//    read[2] = map(b,0,4096,0,255);
-//    read[3] = map(c,0,4096,0,255);
-//    read[4] = map(d,0,4096,0,255);
-//    read[5] = e>>8;
-//    read[6] = 'B';
-     //now  send the information
-
-
-    printf("%d",ADC_GetConversion(channel_AN0));
-    // should do printf????
-    
+    EUSART2_Write((uint8_t)(ADC_GetConversion(channel_AN0)>>8));
+    __delay_ms(1);
+    EUSART2_Write((uint8_t)(ADC_GetConversion(channel_AN1)>>8));
+    __delay_ms(1);
+    EUSART2_Write((uint8_t)(ADC_GetConversion(channel_AN2)>>8));
+    __delay_ms(1);
+    EUSART2_Write((uint8_t)(ADC_GetConversion(channel_AN3)>>8));
+    __delay_ms(1);
+    EUSART2_Write((uint8_t)(ADC_GetConversion(channel_AN4)>>8));
+    __delay_ms(1);   
 }
 
 void receive_information(void)
@@ -201,25 +199,24 @@ void receive_information(void)
     actuate();
 }
 
+
 void main(void)
 {
     SYSTEM_Initialize();
     ADC_Initialize();
-    TMR0_SetInterruptHandler (timedReading_ISR);// register the  interrupt handler
+    setup();
+    error(25);//setup in progress for arduino to sync buffer
+    start_status();
+    send_pad();
+    uint8_t x = 0; 
+    TMR2_SetInterruptHandler (timedReading_ISR);// register the  interrupt handler
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
     
-    
-    
-    
-    setup();
-    start_status();
-    uint8_t x = 0; 
     while (1)
     {
         //every something ms send bend information 
         //always receive from the arduino touch information
         receive_information();
-        
     }
 }

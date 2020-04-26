@@ -1,24 +1,24 @@
 /**
-  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Header File
+  @Generated PIC10 / PIC12 / PIC16 / PIC18 MCUs Source File
 
   @Company:
     Microchip Technology Inc.
 
   @File Name:
-    mcc.h
+    mcc.c
 
   @Summary:
-    This is the mcc.h file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+    This is the mcc.c file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
   @Description:
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.78.1
         Device            :  PIC18F45K22
         Driver Version    :  2.00
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above or later
-        MPLAB             :  MPLAB X 5.20
+        Compiler          :  XC8 2.10 and above or later
+        MPLAB             :  MPLAB X 5.30
 */
 
 /*
@@ -44,48 +44,31 @@
     SOFTWARE.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "device_config.h"
-#include "pin_manager.h"
-#include <stdint.h>
-#include <stdbool.h>
-#include "interrupt_manager.h"
-#include "ccp5.h"
-#include "adc.h"
-#include "tmr0.h"
-#include "eusart2.h"
+#include "mcc.h"
 
 
+void SYSTEM_Initialize(void)
+{
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the device to the default states configured in the
- *                  MCC GUI
- * @Example
-    SYSTEM_Initialize(void);
- */
-void SYSTEM_Initialize(void);
+    INTERRUPT_Initialize();
+    PIN_MANAGER_Initialize();
+    OSCILLATOR_Initialize();
+    TMR2_Initialize();
+    ADC_Initialize();
+    EUSART2_Initialize();
+}
 
-/**
- * @Param
-    none
- * @Returns
-    none
- * @Description
-    Initializes the oscillator to the default states configured in the
- *                  MCC GUI
- * @Example
-    OSCILLATOR_Initialize(void);
- */
-void OSCILLATOR_Initialize(void);
+void OSCILLATOR_Initialize(void)
+{
+    // SCS FOSC; IRCF 1MHz_HFINTOSC/16; IDLEN disabled; 
+    OSCCON = 0x30;
+    // PRISD enabled; SOSCGO disabled; MFIOSEL disabled; 
+    OSCCON2 = 0x04;
+    // INTSRC disabled; PLLEN disabled; TUN 0; 
+    OSCTUNE = 0x00;
+}
 
-#endif	/* MCC_H */
+
 /**
  End of File
 */

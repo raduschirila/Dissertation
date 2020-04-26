@@ -71,12 +71,12 @@ void TMR0_Initialize(void)
     // TMR0H 0; 
     TMR0H = 0x00;
 
-    // TMR0L 227; 
-    TMR0L = 0xE3;
+    // TMR0L 158; 
+    TMR0L = 0x9E;
 
 	
     // Load TMR0 value to the 8-bit reload variable
-    timer0ReloadVal = 227;
+    timer0ReloadVal = 158;
 
     // Clear Interrupt flag before enabling the interrupt
     INTCONbits.TMR0IF = 0;
@@ -144,6 +144,8 @@ void TMR0_ISR(void)
 
 void TMR0_CallBack(void)
 {
+    // Add your custom callback code here
+
     if(TMR0_InterruptHandler)
     {
         TMR0_InterruptHandler();
@@ -155,7 +157,8 @@ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
 }
 
 void TMR0_DefaultInterruptHandler(void){
-
+    // add your TMR0 interrupt custom code
+    // or set custom function using TMR0_SetInterruptHandler()
 }
 
 /**

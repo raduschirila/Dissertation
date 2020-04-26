@@ -13,12 +13,12 @@
   @Description
     This source file provides implementations for driver APIs for ADC.
     Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.77
+        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.78.1
         Device            :  PIC18F45K22
         Driver Version    :  2.01
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.05 and above
-        MPLAB             :  MPLAB X 5.20
+        Compiler          :  XC8 2.10 and above
+        MPLAB             :  MPLAB X 5.30
 */
 
 /*
@@ -57,6 +57,8 @@
   Section: ADC Module APIs
 */
 
+void (*ADC_InterruptHandler)(void);
+
 void ADC_Initialize(void)
 {
     // set the ADC to the options selected in the User Interface
@@ -67,8 +69,8 @@ void ADC_Initialize(void)
     // TRIGSEL CCP5; NVCFG VSS; PVCFG VDD; 
     ADCON1 = 0x00;
     
-    // ADFM right; ACQT 0; ADCS FOSC/2; 
-    ADCON2 = 0x80;
+    // ADFM left; ACQT 2; ADCS FOSC/4; 
+    ADCON2 = 0x0C;
     
     // ADRESL 0; 
     ADRESL = 0x00;
